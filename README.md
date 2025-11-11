@@ -70,9 +70,7 @@ The current architecture is highly extensible. Here are some potential features 
 3.  **Data Persistence:**
     *   Implement functionality to save the current task list to a file (e.g., JSON or XML) when the application closes and load it back on startup. This would make the application state persistent across sessions.
 
-4.  **Advanced Qt Concepts Considered:**
-    *   **Model/View Framework:** For a more complex application, the `QListWidget` could be replaced by a `QListView` connected to a custom `QAbstractItemModel` subclass. This would provide a much cleaner separation between the data (`TaskManager`) and its presentation, improving performance and scalability.
-    *   **Concurrency:** To prevent the GUI from freezing when executing long-running commands (like processing a very large script with `execute_file`), the command execution logic could be moved to a separate worker thread using `QtConcurrent` or `QThread`. Results would be communicated back to the main GUI thread via signals and slots.
+
 
 ## Known Issues or Limitations
 
