@@ -38,7 +38,7 @@ In the spirit of modern development and transparency, it's worth noting that an 
 
 Here are a few screenshots demonstrating the application's functionality, including correct command execution and handling of various errors.
 
-*(Այստեղ տեղ կթողնենք նկարների համար։ Դրանք ավելացնելու համար՝ GitHub-ում README ֆայլը խմբագրելիս, պարզապես քաշեք և գցեք ձեր screenshot ֆայլերը տեքստի մեջ, և GitHub-ը ավտոմատ կստեղծի դրանց համար հղումներ։)*
+․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․․
 
 **Placeholder for Test Result Image 1**
 **Placeholder for Test Result Image 2**
