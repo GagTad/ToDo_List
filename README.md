@@ -1,22 +1,47 @@
 # ToDo List Application for Microchip
 
-This is a simple ToDo List management application developed in C++ using the Qt framework, as a technical task for the C++ Software Engineer Intern position at Microchip.
+This is a simple command-line driven ToDo List management application developed in C++17 with a minimal Qt 6 GUI. The project was created as a technical task for the C++ Software Engineer Intern position at Microchip.
 
-## Design and Architecture
+## Core Architectural Principles & Design
 
-The application is built upon a multi-layered architecture to ensure a clear separation of concerns, high maintainability, and testability. The core logic is completely decoupled from the UI.
+The application's architecture was designed with a strong emphasis on **modularity, scalability, and separation of concerns**. The core business logic is completely decoupled from the presentation layer (the Qt GUI), making the system highly maintainable and testable.
 
-- **Command Processing Pipeline:** User input is processed through a compiler-like pipeline:
-  1.  **Lexer:** Breaks the raw string input into a stream of typed `Tokens`.
-  2.  **Parser:** Validates the syntactic correctness of the token stream and produces a structured `ParsedCommand` object.
-  3.  **Executor:** Performs semantic validation on the `ParsedCommand`, executes the command by calling the `TaskManager`, and returns a raw `ExecutionResult`.
-  4.  **ResponseFormatter:** A presentation-layer class that formats the raw `ExecutionResult` into a user-friendly string.
+### Command Processing Pipeline
+Instead of a simple `if/else` structure, user input is processed through a robust, compiler-inspired pipeline. This approach provides excellent flexibility and powerful error handling.
 
-- **Core Logic:**
-  - **TaskManager:** The central class responsible for all business logic (adding, removing, completing tasks). It uses an `std::map` for efficient, name-based task management.
+1.  **Lexer (`Lexer` class):** The raw input string is first tokenized into a stream of typed `Tokens` (e.g., COMMAND, KEYWORD, STRING_LITERAL). This stage is only concerned with recognizing "words".
 
-- **GUI:**
-  - A minimal **Qt Widgets** interface is used strictly for presentation and user input, as per the requirements. The UI is updated by querying the state of the `TaskManager` after each command.
+2.  **Parser (`Parser` class):** The token stream is then fed into the Parser, which validates its syntactic correctness against the command grammar. If the syntax is valid, it produces a structured `ParsedCommand` object, representing the user's intent. Any grammatical errors (e.g., a missing argument) are caught here.
+
+3.  **Executor (`Executor` class):** This class acts as the bridge between the parsed command and the business logic.
+    *   **Semantic Validation:** It first performs semantic checks on the `ParsedCommand` (e.g., ensuring `list_tasks` has no arguments).
+    *   **Execution:** It then calls the appropriate methods on the `TaskManager`, passing the validated arguments.
+    *   **Result Generation:** It returns a raw, structured `ExecutionResult` object, containing the status of the operation and any relevant data.
+
+4.  **Response Formatter (`ResponseFormatter` class):** This is the final presentation layer component. It takes the `ExecutionResult` and formats it into a user-friendly, display-ready string, including color-coding for errors using HTML.
+
+### Technology Stack
+*   **Language:** C++17
+*   **Framework:** Qt 6
+*   **Build System:** qmake
+*   **Core Data Structures:** `std::map` for efficient O(log n) task lookups, `std::vector`, `std::string`, `std::optional`.
+
+### A Note on AI/LLM Collaboration
+In the spirit of modern development and transparency, it's worth noting that an AI assistant (Large Language Model) was used as a collaborative partner in this project. Its role was primarily in:
+*   Brainstorming and refining architectural ideas (such as the parsing pipeline).
+*   Generating documentation and explanatory text (including significant portions of this README).
+*   Assisting in debugging and identifying subtle errors.
+
+The final design decisions, implementation, and core logic were driven and written by the developer, using the AI as a powerful tool for productivity and quality assurance.
+
+## Test Results
+
+Here are a few screenshots demonstrating the application's functionality, including correct command execution and handling of various errors.
+
+*(Այստեղ տեղ կթողնենք նկարների համար։ Դրանք ավելացնելու համար՝ GitHub-ում README ֆայլը խմբագրելիս, պարզապես քաշեք և գցեք ձեր screenshot ֆայլերը տեքստի մեջ, և GitHub-ը ավտոմատ կստեղծի դրանց համար հղումներ։)*
+
+**Placeholder for Test Result Image 1**
+**Placeholder for Test Result Image 2**
 
 ## How to Build and Run
 
@@ -25,26 +50,30 @@ The application is built upon a multi-layered architecture to ensure a clear sep
 *   A C++17 compatible compiler (e.g., MinGW, MSVC, GCC).
 
 ### Steps
-1.  Clone the repository:
-    ```
-    git clone <your-repository-link>
-    ```
+1.  Clone the repository to your local machine.
 2.  Open the `ToDoApp.pro` file using **Qt Creator**.
-3.  Configure the project by selecting an appropriate Kit (e.g., Desktop Qt MinGW).
+3.  Configure the project by selecting an appropriate Kit.
 4.  From the menu, select **Build -> Run qmake**.
 5.  Press the **Run** button (the green triangle icon) to build and start the application.
 
-## How to Use the Application
+## Future Enhancements
 
-Enter commands into the input field at the bottom and press "Execute". The supported commands are:
+The current architecture is highly extensible. Here are some potential features for future development:
 
-*   `add_task -name {task name}`
-*   `remove_task -name {task name}`
-*   `complete_task -name {task name}`
-*   `list_tasks`
-*   `execute_file -file_path {C:/path/to/your/file.txt}`
+1.  **Task Priority & Deadlines:**
+    *   Extend the `Task` class to include priority levels (e.g., Low, Medium, High) and optional `QDateTime` deadlines.
+    *   The `list_tasks` command could then be enhanced with sorting capabilities (e.g., `list_tasks -sort by_priority`, `list_tasks -sort by_deadline`).
+
+2.  **Interactive UI:**
+    *   Implement logic to handle user interaction directly from the GUI. For example, connecting the `QListWidget::itemChanged` signal to a slot that calls `complete_task` when a user clicks a checkbox. This would require careful state management to avoid conflicts with the command-line input.
+
+3.  **Data Persistence:**
+    *   Implement functionality to save the current task list to a file (e.g., JSON or XML) when the application closes and load it back on startup. This would make the application state persistent across sessions.
+
+4.  **Advanced Qt Concepts Considered:**
+    *   **Model/View Framework:** For a more complex application, the `QListWidget` could be replaced by a `QListView` connected to a custom `QAbstractItemModel` subclass. This would provide a much cleaner separation between the data (`TaskManager`) and its presentation, improving performance and scalability.
+    *   **Concurrency:** To prevent the GUI from freezing when executing long-running commands (like processing a very large script with `execute_file`), the command execution logic could be moved to a separate worker thread using `QtConcurrent` or `QThread`. Results would be communicated back to the main GUI thread via signals and slots.
 
 ## Known Issues or Limitations
 
-*   Task names containing curly braces (`{` or `}`) are not supported due to the simple string literal parsing.
-*   The checkboxes in the task list are for display only. Marking a task as complete must be done via the `complete_task` command.
+*   Task names containing curly braces (`{` or `}`) are not supported due to the simple parsing logic for string literals.
