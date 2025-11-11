@@ -28,7 +28,6 @@ Instead of a simple `if/else` structure, user input is processed through a robus
 
 ### A Note on AI/LLM Collaboration
 In the spirit of modern development and transparency, it's worth noting that an AI assistant (Large Language Model) was used as a collaborative partner in this project. Its role was primarily in:
-*   Brainstorming and refining architectural ideas (such as the parsing pipeline).
 *   Generating documentation and explanatory text (including significant portions of this README).
 *   Assisting in debugging and identifying subtle errors.
 
