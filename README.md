@@ -32,7 +32,7 @@ In the spirit of modern development and transparency, it's worth noting that an 
 *   Generating documentation and explanatory text (including significant portions of this README).
 *   Assisting in debugging and identifying subtle errors.
 
-The final design decisions, implementation, and core logic were driven and written by the developer, using the AI as a powerful tool for productivity and quality assurance.
+
 
 ## Test Results
 
