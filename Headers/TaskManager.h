@@ -10,7 +10,7 @@ enum class TaskResult {
     Success,                 
     SuccessRemoved,          
     SuccessCompleted,        
-    BatchExecutionCompleted,  // Ֆայլից հրամանների կատարումն ավարտվել է
+    BatchExecutionCompleted, 
 
     ErrorNotFound,           
     ErrorAlreadyExists,       
@@ -33,4 +33,5 @@ public:
 private:
 	std::map<std::string, Task> m_tasks;
 };
+
 
