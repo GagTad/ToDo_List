@@ -53,13 +53,32 @@ Here are a few screenshots demonstrating the application's functionality, includ
 ### Prerequisites
 *   Qt 6.x (The project was developed and tested with Qt 6)
 *   A C++17 compatible compiler (e.g., MinGW, MSVC, GCC).
-
+*   Qt Creator IDE
+  
 ### Steps
-1.  Clone the repository to your local machine.
-2.  Open the `ToDoApp.pro` file using **Qt Creator**.
-3.  Configure the project by selecting an appropriate Kit.
-4.  From the menu, select **Build -> Run qmake**.
-5.  Press the **Run** button (the green triangle icon) to build and start the application.
+
+Download the Project Files:
+On the main page of this GitHub repository, click the green < > Code button.
+Select Download ZIP from the dropdown menu.
+Extract the ZIP Archive:
+Find the downloaded ToDo_List-main.zip (or similar) file on your computer.
+Extract its contents to a convenient location (e.g., your Desktop or a projects folder). You will now have a folder named ToDo_List-main containing all the project files (.cpp, .h, .pro, .ui).
+Open the Project in Qt Creator:
+Launch the Qt Creator IDE.
+Go to the menu: File > Open File or Project...
+Navigate into the ToDo_List-main folder that you just extracted.
+Select the ToDoApp.pro file and click "Open". This .pro file is the main project file for Qt.
+Configure the Project:
+A "Configure Project" dialog will appear.
+Select a compatible Kit from the list (e.g., Desktop Qt 6.x.x MinGW 64-bit). A Kit defines the compiler, Qt version, and debugger to use.
+Click the "Configure Project" button.
+Build the Project:
+Once the project is configured and opened, build it by pressing Ctrl+B or clicking the Build icon (a hammer) in the bottom-left panel.
+Wait for the build process to complete. You can monitor the progress in the "Compile Output" tab.
+Run the Application:
+After a successful build, run the application by pressing Ctrl+R or clicking the Run icon (a green triangle).
+The ToDo List Manager application window should now appear on your screen.
+
 
 ## Future Enhancements
 
