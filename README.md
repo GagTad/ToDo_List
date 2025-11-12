@@ -46,6 +46,7 @@ Here are a few screenshots demonstrating the application's functionality, includ
 
 **Placeholder for Test Result Image 1**
 **Placeholder for Test Result Image 2**
+**Placeholder for Test Result Image 3**
 
 ## How to Build and Run
 
