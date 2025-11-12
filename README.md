@@ -37,9 +37,9 @@ In the spirit of modern development and transparency, it's worth noting that an 
 
 Here are a few screenshots demonstrating the application's functionality, including correct command execution and handling of various errors.
 
-<img width="707" height="641" alt="image" src="https://github.com/user-attachments/assets/09d01a7d-a48b-4999-ac01-6135808ec20c" />
-<img width="704" height="636" alt="image" src="https://github.com/user-attachments/assets/a67b1403-2de4-4463-9532-61a57e562be2" />
-<img width="701" height="642" alt="image" src="https://github.com/user-attachments/assets/cfc21df3-aae2-49a4-a606-9b8d7c7671a9" />
+<img width="250" height="200" alt="image" src="https://github.com/user-attachments/assets/09d01a7d-a48b-4999-ac01-6135808ec20c" />
+<img width="260" height="200" alt="image" src="https://github.com/user-attachments/assets/a67b1403-2de4-4463-9532-61a57e562be2" />
+<img width="250" height="200" alt="image" src="https://github.com/user-attachments/assets/cfc21df3-aae2-49a4-a606-9b8d7c7671a9" />
 
 
 
