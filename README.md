@@ -37,10 +37,14 @@ In the spirit of modern development and transparency, it's worth noting that an 
 
 Here are a few screenshots demonstrating the application's functionality, including correct command execution and handling of various errors.
 
-<img width="220" height="200" alt="image" src="https://github.com/user-attachments/assets/09d01a7d-a48b-4999-ac01-6135808ec20c" />**Test Result Image 1**   
-<img width="220" height="200" alt="image" src="https://github.com/user-attachments/assets/a67b1403-2de4-4463-9532-61a57e562be2" />**Test Result Image 2**  
-<img width="220" height="200" alt="image" src="https://github.com/user-attachments/assets/cfc21df3-aae2-49a4-a606-9b8d7c7671a9" />**Test Result Image 3**
-<img width="220" height="198" alt="image" src="https://github.com/user-attachments/assets/c6f0ec1f-957a-4c47-8a62-53909150ca38" />**Test Result Image 4**
+<img width="220" height="200" alt="image" src="https://github.com/user-attachments/assets/09d01a7d-a48b-4999-ac01-6135808ec20c" />
+**Test Result Image 1**   
+<img width="220" height="200" alt="image" src="https://github.com/user-attachments/assets/a67b1403-2de4-4463-9532-61a57e562be2" />
+**Test Result Image 2**  
+<img width="220" height="200" alt="image" src="https://github.com/user-attachments/assets/cfc21df3-aae2-49a4-a606-9b8d7c7671a9" />
+**Test Result Image 3**
+<img width="220" height="198" alt="image" src="https://github.com/user-attachments/assets/c6f0ec1f-957a-4c47-8a62-53909150ca38" />
+**Test Result Image 4**
 
 
 
