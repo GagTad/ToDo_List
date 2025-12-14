@@ -1,6 +1,6 @@
-# ToDo List Application for Microchip
+# ToDo List Application
 
-This is a simple command-line driven ToDo List management application developed in C++17 with a minimal Qt 6 GUI. The project was created as a technical task for the C++ Software Engineer Intern position at Microchip.
+This is a simple command-line driven ToDo List management application developed in C++17 with a minimal Qt 6 GUI. 
 
 ## Core Architectural Principles & Design
 
